@@ -12,8 +12,8 @@ int ftNum(const char &i)
 
 void printFloat(float f)
 {
-	char c = static_cast<char>(f);
 	int i = static_cast<int>(f);
+	char c = static_cast<char>(f);
 	double d = static_cast<double>(f);
 
 	if (!c)
@@ -37,9 +37,9 @@ void printFloat(float f)
 
 void printDouble(double d)
 {
-	char c = static_cast<char>(d);
 	int i = static_cast<int>(d);
 	float f = static_cast<float>(d);
+	char c = static_cast<char>(i);
 
 	if (!c)
 		std::cout<<"char: Non displayable\n";
@@ -116,7 +116,7 @@ void pseudoLiteral(std::string str)
 	if (str[str.length() - 1] == 'f')
 	{
 		std::cout<<"float: "<< str <<"\n";
-		str.pop_back();
+		str = str.substr(0, str.size() - 1);
 		std::cout<<"double: " << str <<"\n";
 	}
 	else {
